@@ -1,0 +1,19 @@
+#11 Unsuperwised learning- Hebbian rule using Python.
+
+
+
+import numpy as np
+
+x = np.array([[1, 1], [1, -1], [-1, 1], [-1, -1]])
+weights = np.zeros(2)
+learning_rate = 0.1
+
+for sample in x:
+    output = np.dot(weights, sample)
+    weights += learning_rate * output * sample
+
+print("Final Weights:", weights)
+
+for sample in x:
+    output = np.dot(weights, sample)
+    print("Input:", sample, "Output:", output)
