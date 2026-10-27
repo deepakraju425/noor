@@ -1,0 +1,26 @@
+#10 Superwised learning- Delta learning rule using Python.
+
+
+
+import numpy as np
+
+x = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
+target = np.array([0, 0, 0, 1])
+
+weights = np.zeros(2)
+bias = 0
+learning_rate = 0.1
+
+for epoch in range(1000):
+    for i in range(len(x)):
+        output = np.dot(x[i], weights) + bias
+        error = target[i] - output
+        weights += learning_rate * error * x[i]
+        bias += learning_rate * error
+
+print("Weights:", weights)
+print("Bias:", bias)
+
+for i in range(len(x)):
+    output = np.dot(x[i], weights) + bias
+    print(x[i], round(output, 2))
