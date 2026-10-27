@@ -1,0 +1,16 @@
+#9 XOR gate Python
+
+
+def step(x):
+    return 1 if x >= 0 else 0
+
+def xor_gate(x1, x2):
+    h1 = step(x1 + x2 - 0.5)
+    h2 = step(-x1 - x2 + 1.5)
+    output = step(h1 + h2 - 1.5)
+    return output
+
+print("X1 X2 Output")
+
+for x1, x2 in [(0, 0), (0, 1), (1, 0), (1, 1)]:
+    print(x1, x2, xor_gate(x1, x2))
