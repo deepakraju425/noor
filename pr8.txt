@@ -1,0 +1,27 @@
+#8 XOR gate C Programming
+
+
+
+#include <stdio.h>
+
+int step(float x) {
+    return x >= 0 ? 1 : 0;
+}
+
+int main() {
+    int x1, x2, h1, h2, output;
+
+    printf("X1 X2 Output\n");
+
+    for (x1 = 0; x1 <= 1; x1++) {
+        for (x2 = 0; x2 <= 1; x2++) {
+            h1 = step(x1 + x2 - 0.5);
+            h2 = step(-x1 - x2 + 1.5);
+            output = step(h1 + h2 - 1.5);
+
+            printf("%d  %d  %d\n", x1, x2, output);
+        }
+    }
+
+    return 0;
+}
