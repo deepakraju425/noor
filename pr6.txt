@@ -1,0 +1,25 @@
+#6 OR gate C programming.
+
+
+
+#include <stdio.h>
+
+int step(float x) {
+    return x >= 0 ? 1 : 0;
+}
+
+int main() {
+    int x1, x2, output;
+    float w1 = 1, w2 = 1, bias = -0.5;
+
+    printf("X1 X2 Output\n");
+
+    for (x1 = 0; x1 <= 1; x1++) {
+        for (x2 = 0; x2 <= 1; x2++) {
+            output = step(w1 * x1 + w2 * x2 + bias);
+            printf("%d  %d  %d\n", x1, x2, output);
+        }
+    }
+
+    return 0;
+}
