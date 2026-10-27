@@ -1,0 +1,36 @@
+#13 Hybrid fuzzy logic controller.
+
+
+
+def hybrid_controller(temperature, humidity):
+    if temperature <= 20:
+        temp_level = "Low"
+    elif temperature <= 30:
+        temp_level = "Medium"
+    else:
+        temp_level = "High"
+
+    if humidity <= 40:
+        humidity_level = "Low"
+    elif humidity <= 70:
+        humidity_level = "Medium"
+    else:
+        humidity_level = "High"
+
+    if temp_level == "High" and humidity_level == "High":
+        output = "High Cooling"
+    elif temp_level == "High" or humidity_level == "High":
+        output = "Medium Cooling"
+    elif temp_level == "Medium" and humidity_level == "Medium":
+        output = "Low Cooling"
+    else:
+        output = "Very Low Cooling"
+
+    print("Temperature Level:", temp_level)
+    print("Humidity Level:", humidity_level)
+    print("Controller Output:", output)
+
+temperature = float(input("Enter temperature: "))
+humidity = float(input("Enter humidity (0-100): "))
+
+hybrid_controller(temperature, humidity)
